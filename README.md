@@ -97,4 +97,11 @@ Records and calculates student attendance.
 ```text
 Attendance Percentage =
 (Classes Attended / Total Classes) × 100
+```
 
+## Author
+
+**Chirag Patil**  
+**25BAI10151**  
+Programming in Java  
+VIT Bhopal University
