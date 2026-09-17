@@ -1,6 +1,6 @@
 # CampusTracker Design Diagrams
 
-These diagrams are written in Mermaid so they can be viewed directly on GitHub in Markdown-capable viewers.
+
 
 ## 1. System Architecture
 
