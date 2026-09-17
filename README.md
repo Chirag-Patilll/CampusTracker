@@ -1,612 +1,213 @@
-\# CampusTracker
+CampusTracker
 
+CampusTracker is a command-line Student Academic Management System developed as a second-year Java college project. It manages students, courses, enrollments, attendance, academic reports, and dashboard information using core Java concepts.
 
+Main Modules
 
-CampusTracker is a Java-based Student Academic Management System developed as a second-year college project. The application provides a command-line interface for managing students, courses, course enrollments, attendance records, and academic reports.
+Student Management - add, view, update, and delete student records.
 
+Course and Enrollment Management - manage courses and enroll students.
 
+Attendance and Reporting - record attendance, calculate percentages, generate student reports, and show dashboard summaries.
 
-The project is designed using Java, Maven, object-oriented programming, collections, file handling, exception handling, and multithreading.
+Local Storage - save and load application data using text files.
 
+Java Concepts Used
 
+Classes and objects
 
-\## Features
+Encapsulation
 
+Constructors and methods
 
+Inheritance through the background save thread
 
-\* Add new students
+ArrayList and HashMap
 
-\* View all students
+Custom exception handling
 
-\* Update student details
+File I/O with Reader and Writer classes
 
-\* Delete students
+Input validation
 
-\* Add new courses
+Multithreading
 
-\* View all courses
+Basic service-based separation of responsibilities
 
-\* Update course details
+Requirements
 
-\* Delete courses
+JDK 27
 
-\* Enroll students in courses
+Apache Maven
 
-\* View enrollments
+Git
 
-\* Record and update attendance
+Command Prompt, PowerShell, or another terminal
 
-\* Generate individual student academic reports
-
-\* Display an academic dashboard
-
-\* Save data to text files
-
-\* Load saved data when the application starts
-
-\* Automatic background data saving
-
-\* Input validation and exception handling
-
-
-
-\## Technologies Used
-
-
-
-\* Java
-
-\* Maven
-
-\* Java Collections Framework
-
-\* File Handling
-
-\* Exception Handling
-
-\* Multithreading
-
-\* Object-Oriented Programming
-
-
-
-\## Requirements
-
-
-
-The following software is required:
-
-
-
-\* JDK 27
-
-\* Apache Maven
-
-\* Git
-
-\* Command Prompt or any terminal
-
-
-
-Check Java installation:
-
-
-
-```bash
+Check Java:
 
 java -version
 
-```
-
-
-
-Check Maven installation:
-
-
-
-```bash
+Check Maven:
 
 mvn -version
 
-```
-
-
-
-\## Project Structure
-
-
-
-```text
+Project Structure
 
 CampusTracker/
+|-- pom.xml
+|-- README.md
+|-- statement.md
+|-- .gitignore
+|-- data/
+|-- docs/
+|   |-- design.md
+|   `-- test-plan.md
+|-- report/
+|   `-- CampusTracker_Project_Report.pdf
+`-- src/
+    `-- main/
+        `-- java/
+            `-- com/
+                `-- mycompany/
+                    `-- campustracker/
+                        `-- CampusTracker.java
 
-├── pom.xml
+The data directory is created automatically if it is missing.
 
-├── README.md
-
-├── statement.md
-
-├── src/
-
-│   └── main/
-
-│       └── java/
-
-│           └── com/
-
-│               └── mycompany/
-
-│                   └── campustracker/
-
-│                       └── CampusTracker.java
-
-└── data/
-
-```
-
-
-
-The `data` folder is created automatically when the application runs.
-
-
-
-\## Setup
-
-
-
-First clone the repository:
-
-
-
-```bash
+Clone the Repository
 
 git clone https://github.com/Chirag-Patilll/CampusTracker.git
-
-```
-
-
-
-Move into the project directory:
-
-
-
-```bash
-
 cd CampusTracker
 
-```
+Build the Project
 
-
-
-\## Build the Project
-
-
-
-Run the following command:
-
-
-
-```bash
+Run from the project root:
 
 mvn clean package
 
-```
+A successful build should end with BUILD SUCCESS.
 
+Run from the Command Line
 
-
-This compiles the Java source code and creates the project build files.
-
-
-
-\## Run the Project
-
-
-
-The application can be run from the command line with:
-
-
-
-```bash
+After a successful build:
 
 java -cp target/classes com.mycompany.campustracker.CampusTracker
 
-```
+The application runs completely in the terminal and does not require a graphical interface.
 
+Run Through NetBeans
 
-
-The program will start in the terminal and display the main menu.
-
-
-
-\## Running Through NetBeans
-
-
-
-The project can also be opened in Apache NetBeans as a Maven project.
-
-
-
-Open the project in NetBeans and run the main class:
-
-
-
-```text
+Open the project as a Maven project in NetBeans. The main class is:
 
 com.mycompany.campustracker.CampusTracker
 
-```
+Menu
 
+1. Add Student
+2. List Students
+3. Update Student
+4. Delete Student
+5. Add Course
+6. List Courses
+7. Update Course
+8. Delete Course
+9. Enroll Student in Course
+10. List Enrollments
+11. Record / Update Attendance
+12. Student Academic Report
+13. Dashboard
+14. Save Data Now
+0. Exit
 
+Example Workflow
 
-\## Main Menu
-
-
-
-When the program starts, the following options are available:
-
-
-
-```text
-
-1\\. Add Student
-
-2\\. List Students
-
-3\\. Update Student
-
-4\\. Delete Student
-
-5\\. Add Course
-
-6\\. List Courses
-
-7\\. Update Course
-
-8\\. Delete Course
-
-9\\. Enroll Student in Course
-
-10\\. List Enrollments
-
-11\\. Record / Update Attendance
-
-12\\. Student Academic Report
-
-13\\. Dashboard
-
-14\\. Save Data Now
-
-0\\. Exit
-
-```
-
-
-
-\## Student Example
-
-
-
-Select option `1` and enter:
-
-
-
-```text
+Add a student:
 
 Student ID: S101
-
 Name: Rahul Sharma
-
 Email: rahul@gmail.com
-
 Department: Computer Science
-
 Semester (1-8): 4
 
-```
-
-
-
-The system validates the student information before saving it.
-
-
-
-\## Course Example
-
-
-
-Select option `5` and enter:
-
-
-
-```text
+Add a course:
 
 Course code: JAVA201
-
 Course title: Object Oriented Programming
-
 Credits (1-6): 4
-
 Faculty name: Dr Mehta
 
-```
-
-
-
-\## Enrollment Example
-
-
-
-Select option `9`:
-
-
-
-```text
+Enroll the student:
 
 Student ID: S101
-
 Course code: JAVA201
 
-```
-
-
-
-The student must exist and the course must exist before enrollment is accepted.
-
-
-
-\## Attendance Example
-
-
-
-Select option `11`:
-
-
-
-```text
+Record attendance:
 
 Student ID: S101
-
 Course code: JAVA201
-
 Classes attended: 18
-
 Total classes: 20
 
-```
+The system calculates 90.00% attendance for this example.
 
+Data Storage
 
-
-The application calculates the attendance percentage automatically.
-
-
-
-For the above example:
-
-
-
-```text
-
-Attendance = 90.00%
-
-```
-
-
-
-The system marks attendance as `ELIGIBLE` when the percentage is 75% or above.
-
-
-
-\## Academic Report
-
-
-
-Select option `12` and enter the student ID:
-
-
-
-```text
-
-S101
-
-```
-
-
-
-The report displays the student's department, semester, enrolled courses, and attendance information.
-
-
-
-\## Dashboard
-
-
-
-Select option `13` to display:
-
-
-
-\* Total students
-
-\* Total courses
-
-\* Total enrollments
-
-\* Total attendance records
-
-\* Eligible attendance records
-
-\* Student count by department
-
-
-
-\## Data Storage
-
-
-
-The application uses text files for persistent storage.
-
-
-
-The following files are used:
-
-
-
-```text
+The application stores data in these text files:
 
 data/students.txt
-
 data/courses.txt
-
 data/enrollments.txt
-
 data/attendance.txt
 
-```
+Data is loaded when the application starts and saved when the user selects Save Data or exits the program. A background thread also performs periodic saving.
 
+Validation and Error Handling
 
+The application checks for:
 
-Records are loaded when the application starts and saved when requested or when the application exits.
+Missing student and course fields
 
+Invalid email format
 
+Invalid semester values
 
-\## Validation
+Invalid course credit values
 
+Duplicate student IDs
 
+Duplicate course codes
 
-The application checks:
+Missing students or courses during enrollment
 
+Invalid attendance values
 
+Attendance entry before enrollment
 
-\* Empty student fields
+File read/write problems
 
-\* Empty course fields
+Invalid numeric input
 
-\* Valid email format
+Testing
 
-\* Valid semester range
+The manual test plan is available in docs/test-plan.md.
 
-\* Valid credit range
-
-\* Duplicate student IDs
-
-\* Duplicate course codes
-
-\* Existing students and courses for enrollment
-
-\* Valid attendance values
-
-\* Enrollment before recording attendance
-
-
-
-\## Exception Handling
-
-
-
-The application uses custom exceptions for validation and storage-related errors.
-
-
-
-Invalid input is handled without stopping the entire application.
-
-
-
-\## Multithreading
-
-
-
-The project includes an automatic save thread.
-
-
-
-The background thread periodically saves the current application data while the program is running.
-
-
-
-\## Testing
-
-
-
-The project can be tested from the command line using:
-
-
-
-```bash
+Basic command-line verification:
 
 mvn clean package
-
-```
-
-
-
-Then:
-
-
-
-```bash
-
 java -cp target/classes com.mycompany.campustracker.CampusTracker
 
-```
+Test the normal workflow, invalid inputs, duplicate records, attendance calculations, data saving, and data loading after restarting the application.
 
+Documentation
 
+The docs/design.md file contains the project architecture, workflow, use case, class, and storage diagrams in Mermaid format.
 
-Important test cases include:
+The project report is available at:
 
+report/CampusTracker_Project_Report.pdf
 
-
-```text
-
-1\\. Add a valid student
-
-2\\. Add a duplicate student
-
-3\\. Add a valid course
-
-4\\. Add a duplicate course
-
-5\\. Update student information
-
-6\\. Update course information
-
-7\\. Enroll an existing student
-
-8\\. Try enrolling a non-existing student
-
-9\\. Record valid attendance
-
-10\\. Try invalid attendance values
-
-11\\. Generate a student report
-
-12\\. Display the dashboard
-
-13\\. Save and reload data
-
-14\\. Exit the application and verify stored data
-
-```
-
-
-
-\## Author
-
-
+Author
 
 Chirag Patil
-
-
-
-\## Project Type
-
-
-
-Second Year College Project
-
-
-
-\## Repository
-
-
-
-https://github.com/Chirag-Patilll/CampusTracker
-
+25BAI10151

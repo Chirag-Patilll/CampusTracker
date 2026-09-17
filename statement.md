@@ -1,258 +1,270 @@
-\# CampusTracker - Project Statement
+Project Statement
 
 
 
-\## Problem Statement
+Project Title
 
 
 
-Managing student academic information manually can become difficult when student records, courses, enrollments, and attendance information increase.
+CampusTracker - Student Academic Management System
 
 
 
-There is a need for a simple system that can store academic information in an organized way and allow users to add, update, delete, search, and report academic records.
+Problem Statement
 
 
 
-CampusTracker is developed as a command-line Java application to manage these academic activities in one system.
+Managing student academic records manually can become difficult when student details, course information, enrollments, and attendance records grow over time. Basic activities such as updating records, checking attendance, and preparing student-level reports become inconvenient when information is stored separately.
 
 
 
-\## Project Scope
+CampusTracker provides a small command-line Java application that keeps these academic activities in one place and supports common record-management operations through a menu-driven interface.
 
 
 
-The project focuses on basic academic record management.
+Scope
 
 
 
-The system manages:
+The project covers:
 
 
 
-\* Student information
+Student CRUD operations
 
-\* Course information
 
-\* Student course enrollments
 
-\* Attendance records
+Course CRUD operations
 
-\* Student academic reports
 
-\* Academic dashboard information
 
-\* Local data storage
+Course enrollment
 
 
 
-The system uses Java and text files for storing application data.
+Attendance recording and updating
 
 
 
-\## Target Users
+Attendance percentage calculation
 
 
 
-The intended users of the system are:
+Student academic reports
 
 
 
-\* Students
+Dashboard summaries
 
-\* Faculty members
 
-\* Academic administrators
 
+Local file-based persistence
 
 
-\## High-Level Features
 
+Input validation and custom error handling
 
 
-\### Student Management
 
+Background auto-save
 
 
-The system allows users to:
 
+Target Users
 
 
-\* Add students
 
-\* View students
+Students demonstrating Java programming concepts
 
-\* Update student details
 
-\* Delete students
 
-\* Validate student information
+Faculty members who need simple academic record management
 
 
 
-\### Course Management
+Academic/project evaluators reviewing the implementation
 
 
 
-The system allows users to:
+High-Level Features
 
 
 
-\* Add courses
+Student Management
 
-\* View courses
 
-\* Update course details
 
-\* Delete courses
+Users can add, view, update, and delete student records. The system checks required fields, email format, duplicate IDs, and semester range.
 
-\* Validate course information
 
 
+Course Management
 
-\### Enrollment Management
 
 
+Users can add, view, update, and delete course records. Course code duplication and credit range are validated.
 
-The system allows users to:
 
 
+Enrollment Management
 
-\* Enroll students into courses
 
-\* Check whether a student is already enrolled
 
-\* View enrollment records
+Users can enroll an existing student in an existing course. Duplicate enrollments are prevented.
 
 
 
-\### Attendance Management
+Attendance Management
 
 
 
-The system allows users to:
+Users can store attendance for enrolled students. The system validates the attended and total class counts and calculates attendance percentage.
 
 
 
-\* Record attendance
+Reporting
 
-\* Update attendance
 
-\* Calculate attendance percentage
 
-\* Display attendance eligibility
+The system generates a student academic report and a dashboard summary containing overall record counts and attendance eligibility information.
 
 
 
-\### Academic Reporting
+Storage
 
 
 
-The system generates:
+Application records are stored locally in text files and loaded again when the program starts.
 
 
 
-\* Individual student academic reports
+Objectives
 
-\* Course enrollment details
 
-\* Attendance information
 
-\* Academic dashboard information
+Apply object-oriented programming concepts to a practical academic problem.
 
 
 
-\### Data Storage
+Demonstrate Java collections for record management.
 
 
 
-The project stores application data in text files so that records remain available after the program is closed.
+Use file handling for persistent storage.
 
 
 
-\## Project Objective
+Apply exception handling and input validation.
 
 
 
-The main objective of CampusTracker is to develop a simple Java application that demonstrates the practical use of:
+Demonstrate multithreading through automatic background saving.
 
 
 
-\* Object-oriented programming
+Provide a fully command-line executable application.
 
-\* Classes and objects
 
-\* Inheritance through thread usage
 
-\* Exception handling
+Non-Functional Requirements
 
-\* Java collections
 
-\* File handling
 
-\* String processing
+Performance
 
-\* Input validation
 
-\* Multithreading
 
+For normal college-sized datasets, common menu operations should complete without noticeable delay.
 
 
-\## Expected Outcome
 
+Usability
 
 
-The expected outcome is a working command-line academic management application that allows users to manage student and course records, enroll students, record attendance, generate reports, and store data locally.
 
+The application should provide clear menu options and simple prompts so a first-time user can operate it from a terminal.
 
 
-\## Limitations
 
+Reliability
 
 
-The current version is a command-line application and does not provide a graphical user interface.
 
+Saved records should remain available after the application is closed and started again, provided the data files are not removed or corrupted.
 
 
-The project uses local text files instead of a database.
 
+Maintainability
 
 
-The application is intended for academic demonstration and small-scale record management.
 
+The implementation separates model, service, reporting, storage, and thread responsibilities through distinct classes, even though the current submission uses a single Java source file.
 
 
-\## Future Enhancements
 
+Error Handling
 
 
-Possible future improvements include:
 
+Invalid input and storage errors should be reported without unexpectedly terminating the application.
 
 
-\* Graphical user interface
 
-\* Database integration
+Limitations
 
-\* User login and authentication
 
-\* Role-based access
 
-\* Advanced attendance analytics
+The current interface is command-line based.
 
-\* Marks and grade management
 
-\* Exporting reports to PDF
 
-\* Search and filtering features
+Data is stored in text files instead of a database.
 
-\* Web-based access
 
 
+There is no user authentication or role management.
 
-\## Project Summary
 
 
+The system is intended for small-scale academic record management.
 
-CampusTracker provides a simple and practical solution for managing basic academic records through a Java command-line application. It combines multiple Java programming concepts in a single project and demonstrates how these concepts can be used to solve a real-world academic management problem.
+
+
+Future Enhancements
+
+
+
+GUI using JavaFX or Swing
+
+
+
+JDBC/database integration
+
+
+
+User authentication and roles
+
+
+
+Marks and grade management
+
+
+
+PDF report export
+
+
+
+Search and filtering
+
+
+
+Attendance analytics and charts
+
+
+
+Summary
+
+
+
+CampusTracker demonstrates how core Java features can be combined to solve a practical academic record-management problem. The project includes CRUD operations, collections, file I/O, exception handling, validation, reporting, and multithreading in a single terminal-based application.
 
